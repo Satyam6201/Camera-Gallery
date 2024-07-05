@@ -1,0 +1,124 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "poppines",sans-serif;
+    font-weight: bolder; 
+    font-size: 20px;
+}
+#main_box{
+    background-image: url("/Camera/image/photo.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+ #one{
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    font-weight: 700;
+    position: absolute;
+    left: 14px;
+    line-height: 57px;
+    opacity: 1;
+    transition: all 0.5s linear;
+} 
+.sidebar_menu{
+    position: fixed;
+    left: -320px;
+    height: 100vh;
+    width: 300px;
+    box-shadow: 1px 1px 6px rgb(248, 241, 241);
+    background-color: rgba(8, 8, 8, 0.4);
+    border: 2px solid rgb(255, 255, 255);
+    color: white;
+    transition: all 0.5s linear;
+}
+ .sidebar_menu .logo{  
+    box-shadow: 2px 2px 8px rgb(62, 61, 58);
+    background-color: rgb(248, 250, 250);
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    border: 2px solid rgb(89, 85, 85);
+    color: white;
+} 
+ .sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+} 
+.sidebar_menu .two{
+    color: rgb(255, 253, 253);
+    font-size: 20px;
+    position: absolute;
+    left: 250px;
+    top: 20px;
+  
+}
+.sidebar_menu .menu{
+    width: 100%;
+    position: absolute;
+    top: 80px;
+}
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 15px 20px;
+    color: whitesmoke;
+}
+.sidebar_menu .menu li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+}
+.sidebar_menu .menu i{
+    padding-right: 10px;
+    margin-left: 10px;
+}
+.sidebar_menu .social_media i{
+    color:white;
+    opacity: 0.88;
+    margin-left: 10px;
+    margin-top: 80px;
+}
+#check{
+    display: none;
+}
+.sidebar_menu .menu li:hover{
+    box-shadow: 2px 2px 8px rgb(62, 61, 58);
+}
+.sidebar_menu .social_media i:hover{
+    box-shadow: 2px 2px 8px rgb(62, 61, 58);
+    opacity: 1;
+    font-size: 40px;
+}
+#one i:hover{
+    font-size: 40px;
+    color: rgba(255, 255, 255, 1);
+    box-shadow: 2px 2px 8px rgb(254, 254, 254);
+    opacity: 1;
+}
+.logo a:hover{
+    box-shadow: 2px 2px 8px rgb(62, 61, 58);
+}
+#check:checked ~ .sidebar_menu {
+    left: 0;
+}
+#check:checked ~ #one i{
+    opacity: 0;
+}
+.two:hover{
+    box-shadow: 0px 0px 5px whitesmoke;
+}
+li i:hover{
+    font-size: 40px;
+}
+#facebook:hover{
+    color: blue;
+}
+#insta:hover{
+    color: rgb(196, 16, 219);
+}
+#youtube:hover{
+    color: red;
+}
