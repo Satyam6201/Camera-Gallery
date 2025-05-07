@@ -1,124 +1,144 @@
-*{
+* {
     margin: 0;
     padding: 0;
-    font-family: "poppines",sans-serif;
-    font-weight: bolder; 
+    font-family: "Poppins", sans-serif;
+    font-weight: bold; 
     font-size: 20px;
+    box-sizing: border-box;
 }
-#main_box{
+
+body {
+    background-color: #111;
+    color: white;
+}
+
+#main_box {
     background-image: url("/Camera/image/photo.jpg");
     background-size: cover;
+    background-position: center;
     height: 100vh;
+    position: relative;
 }
- #one{
-    color: rgb(255, 255, 255);
+
+#one {
+    color: white;
     font-size: 40px;
-    font-weight: 700;
     position: absolute;
-    left: 14px;
-    line-height: 57px;
-    opacity: 1;
-    transition: all 0.5s linear;
-} 
-.sidebar_menu{
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.sidebar_menu {
     position: fixed;
     left: -320px;
     height: 100vh;
     width: 300px;
-    box-shadow: 1px 1px 6px rgb(248, 241, 241);
-    background-color: rgba(8, 8, 8, 0.4);
-    border: 2px solid rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    border-right: 2px solid #fff;
     color: white;
-    transition: all 0.5s linear;
+    transition: all 0.4s ease;
+    z-index: 1;
+    overflow-y: auto;
 }
- .sidebar_menu .logo{  
-    box-shadow: 2px 2px 8px rgb(62, 61, 58);
-    background-color: rgb(248, 250, 250);
-    position: absolute;
-    width: 100%;
-    line-height: 60px;
-    border: 2px solid rgb(89, 85, 85);
-    color: white;
-} 
- .sidebar_menu .logo a{
-    position: absolute;
-    left: 50px;
-    text-decoration: none;
-    color: white;
-    font-size: 25px;
+
+.sidebar_menu .logo {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    font-size: 26px;
     font-weight: 700;
-} 
-.sidebar_menu .two{
-    color: rgb(255, 253, 253);
-    font-size: 20px;
-    position: absolute;
-    left: 250px;
-    top: 20px;
-  
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #444;
 }
-.sidebar_menu .menu{
-    width: 100%;
-    position: absolute;
-    top: 80px;
-}
-.sidebar_menu .menu li{
-    margin-top: 6px;
-    padding: 15px 20px;
-    color: whitesmoke;
-}
-.sidebar_menu .menu li a{
-    text-decoration: none;
+
+.sidebar_menu .logo a {
     color: white;
-    font-size: 20px;
+    text-decoration: none;
 }
-.sidebar_menu .menu i{
-    padding-right: 10px;
-    margin-left: 10px;
+
+.sidebar_menu .two {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    cursor: pointer;
+    font-size: 24px;
 }
-.sidebar_menu .social_media i{
-    color:white;
-    opacity: 0.88;
-    margin-left: 10px;
+
+.sidebar_menu .menu {
     margin-top: 80px;
+    padding: 0 20px;
 }
-#check{
+
+.sidebar_menu .menu ul {
+    list-style: none;
+}
+
+.sidebar_menu .menu li {
+    padding: 15px 10px;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.sidebar_menu .menu li:hover {
+    background-color: #2a2a2a;
+}
+
+.sidebar_menu .menu a {
+    color: white;
+    text-decoration: none;
+    flex: 1;
+}
+
+.sidebar_menu .social_media {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.sidebar_menu .social_media a i {
+    font-size: 24px;
+    margin: 10px;
+    color: white;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.sidebar_menu .social_media a i:hover {
+    transform: scale(1.2);
+}
+
+#facebook:hover {
+    color: #1877f2;
+}
+
+#twitter:hover {
+    color: #1da1f2;
+}
+
+#insta:hover {
+    color: #e1306c;
+}
+
+#youtube:hover {
+    color: #ff0000;
+}
+
+#check {
     display: none;
 }
-.sidebar_menu .menu li:hover{
-    box-shadow: 2px 2px 8px rgb(62, 61, 58);
-}
-.sidebar_menu .social_media i:hover{
-    box-shadow: 2px 2px 8px rgb(62, 61, 58);
-    opacity: 1;
-    font-size: 40px;
-}
-#one i:hover{
-    font-size: 40px;
-    color: rgba(255, 255, 255, 1);
-    box-shadow: 2px 2px 8px rgb(254, 254, 254);
-    opacity: 1;
-}
-.logo a:hover{
-    box-shadow: 2px 2px 8px rgb(62, 61, 58);
-}
+
 #check:checked ~ .sidebar_menu {
     left: 0;
 }
-#check:checked ~ #one i{
+
+#check:checked ~ #one {
     opacity: 0;
-}
-.two:hover{
-    box-shadow: 0px 0px 5px whitesmoke;
-}
-li i:hover{
-    font-size: 40px;
-}
-#facebook:hover{
-    color: blue;
-}
-#insta:hover{
-    color: rgb(196, 16, 219);
-}
-#youtube:hover{
-    color: red;
+    pointer-events: none;
 }
