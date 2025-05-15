@@ -43,4 +43,5 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
 ## Author
 
 Made with ❤️ by [Satyam Kumar Mishra](https://www.linkedin.com/in/satyam-kumar-mishra-9bb980291/) 
+
 https://github.com/Satyam6201
