@@ -26,11 +26,13 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
 /Camera Gallery
 
    index.html
+   
    style.css
    
 /image
 
    gallery_icon(2).png
+   
    photo.jpg
 
    
