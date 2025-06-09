@@ -1,10 +1,15 @@
+/* Reset and base */
 * {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    font-weight: bold; 
+    font-weight: bold;
     font-size: 20px;
     box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -12,6 +17,7 @@ body {
     color: white;
 }
 
+/* Main container with background image */
 #main_box {
     background-image: url("/Camera/image/photo.jpg");
     background-size: cover;
@@ -20,6 +26,7 @@ body {
     position: relative;
 }
 
+/* Hamburger icon */
 #one {
     color: white;
     font-size: 40px;
@@ -31,6 +38,11 @@ body {
     transition: all 0.3s ease;
 }
 
+#one i {
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar */
 .sidebar_menu {
     position: fixed;
     left: -320px;
@@ -40,12 +52,15 @@ body {
     backdrop-filter: blur(8px);
     border-right: 2px solid #fff;
     color: white;
-    transition: all 0.4s ease;
-    z-index: 1;
+    transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 3;
     overflow-y: auto;
+    box-shadow: 5px 0 15px rgba(0,0,0,0.4);
 }
 
 .sidebar_menu .logo {
+    position: sticky;
+    top: 0;
     background-color: #1a1a1a;
     padding: 20px;
     text-align: center;
@@ -54,6 +69,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 1px solid #444;
+    z-index: 10;
 }
 
 .sidebar_menu .logo a {
@@ -61,14 +77,21 @@ body {
     text-decoration: none;
 }
 
+/* Close icon */
 .sidebar_menu .two {
     position: absolute;
     right: 20px;
     top: 20px;
     cursor: pointer;
     font-size: 24px;
+    z-index: 11;
 }
 
+.sidebar_menu .two i {
+    transition: transform 0.3s ease;
+}
+
+/* Sidebar menu items */
 .sidebar_menu .menu {
     margin-top: 80px;
     padding: 0 20px;
@@ -86,6 +109,7 @@ body {
     gap: 15px;
     cursor: pointer;
     transition: background 0.3s;
+    position: relative;
 }
 
 .sidebar_menu .menu li:hover {
@@ -98,14 +122,32 @@ body {
     flex: 1;
 }
 
+/* Icon animations */
+.sidebar_menu .menu li i {
+    transition: transform 0.3s ease;
+}
+
+.sidebar_menu .menu li:hover i {
+    transform: scale(1.3) rotate(10deg);
+}
+
+/* Social media icons */
 .sidebar_menu .social_media {
     margin-top: 40px;
     text-align: center;
 }
 
+.sidebar_menu .social_media ul {
+    display: inline-flex;
+    padding: 0;
+}
+
+.sidebar_menu .social_media a {
+    margin: 0 8px;
+}
+
 .sidebar_menu .social_media a i {
     font-size: 24px;
-    margin: 10px;
     color: white;
     transition: transform 0.3s, color 0.3s;
 }
@@ -130,15 +172,185 @@ body {
     color: #ff0000;
 }
 
+/* Overlay */
+#overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+}
+
+/* Hide checkbox */
 #check {
     display: none;
 }
 
+/* When sidebar open */
 #check:checked ~ .sidebar_menu {
     left: 0;
+}
+
+#check:checked ~ #overlay {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 #check:checked ~ #one {
     opacity: 0;
     pointer-events: none;
+}
+
+#check:checked ~ #one i {
+    transform: rotate(90deg);
+}
+
+#check:checked ~ .sidebar_menu .two i {
+    transform: rotate(-90deg);
+}
+
+/* Tooltip on menu li */
+.sidebar_menu .menu li:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 110%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #222;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    pointer-events: none;
+    opacity: 0.9;
+    z-index: 100;
+}
+
+/* Scrollbar styling */
+.sidebar_menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar_menu::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 3px;
+}
+
+.sidebar_menu::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Theme toggle styles */
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0;
+  right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 22px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+}
+
+/* Sidebar footer */
+.sidebar-footer {
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: #bbb;
+    border-top: 1px solid #444;
+    margin-top: 30px;
+}
+
+/* Light mode styles */
+body.light-mode {
+    background-color: #f4f4f4;
+    color: #222;
+}
+
+body.light-mode #main_box {
+    background-image: url("/Camera/image/photo-light.jpg"); /* Replace with your light background */
+}
+
+body.light-mode .sidebar_menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #222;
+    border-right: 2px solid #ccc;
+    backdrop-filter: none;
+}
+
+body.light-mode .sidebar_menu .logo {
+    background-color: #ddd;
+    border-bottom: 1px solid #aaa;
+}
+
+body.light-mode .sidebar_menu .menu li {
+    border-bottom: 1px solid #ccc;
+}
+
+body.light-mode .sidebar_menu .menu li:hover {
+    background-color: #eee;
+}
+
+body.light-mode .sidebar_menu .menu a {
+    color: #222;
+}
+
+body.light-mode .sidebar_menu .social_media a i {
+    color: #222;
+}
+
+body.light-mode .sidebar_menu .social_media a i:hover {
+    filter: brightness(1.3);
+}
+
+body.light-mode .theme-toggle {
+    color: #222;
 }
