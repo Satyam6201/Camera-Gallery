@@ -309,48 +309,55 @@ input:checked + .slider:before {
     margin-top: 30px;
 }
 
-/* Light mode styles */
-body.light-mode {
-    background-color: #f4f4f4;
-    color: #222;
+.sidebar-footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #bbb;
+  border-top: 1px solid #444;
+  margin-top: 30px;
+  user-select: none;
+  line-height: 1.5;
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: 0.05em;
+  background: linear-gradient(90deg, #222, #444);
+  box-shadow: inset 0 0 10px #111;
+  border-radius: 0 0 10px 10px;
 }
 
-body.light-mode #main_box {
-    background-image: url("/Camera/image/photo-light.jpg"); /* Replace with your light background */
+.sidebar-footer p.author {
+  margin-top: 8px;
+  font-size: 15px;
+  color: #ffcc00;
+  cursor: default;
 }
 
-body.light-mode .sidebar_menu {
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #222;
-    border-right: 2px solid #ccc;
-    backdrop-filter: none;
+.sidebar-footer p.author .author-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  color: #ffc107;
+  transition: text-shadow 0.3s ease;
 }
 
-body.light-mode .sidebar_menu .logo {
-    background-color: #ddd;
-    border-bottom: 1px solid #aaa;
+.sidebar-footer p.author .author-name i {
+  color: #ffb300;
+  font-size: 16px;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-body.light-mode .sidebar_menu .menu li {
-    border-bottom: 1px solid #ccc;
+/* Glow effect on hover */
+.sidebar-footer p.author .author-name:hover {
+  text-shadow:
+    0 0 5px #ffc107,
+    0 0 10px #ffb300,
+    0 0 20px #ffb300,
+    0 0 30px #ff6f00;
 }
 
-body.light-mode .sidebar_menu .menu li:hover {
-    background-color: #eee;
-}
-
-body.light-mode .sidebar_menu .menu a {
-    color: #222;
-}
-
-body.light-mode .sidebar_menu .social_media a i {
-    color: #222;
-}
-
-body.light-mode .sidebar_menu .social_media a i:hover {
-    filter: brightness(1.3);
-}
-
-body.light-mode .theme-toggle {
-    color: #222;
+.sidebar-footer p.author .author-name:hover i {
+  color: #ff6f00;
+  transform: rotate(20deg) scale(1.2);
 }
