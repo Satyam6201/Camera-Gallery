@@ -22,7 +22,7 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
 2. Open the `index.html` file in a web browser to view the project.
 
 ### File Structure
-
+```
 /Camera Gallery
 
    index.html
@@ -34,7 +34,7 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
    gallery_icon(2).png
    
    photo.jpg
-
+```
 ## Customization
 
 - **Logo**: Change the logo in the sidebar by updating the `logo` class in the HTML file.
