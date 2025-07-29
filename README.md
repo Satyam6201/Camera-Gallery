@@ -31,6 +31,7 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
    gallery_icon.png
    photo.jpg
 ```
+---
 ## Customization
 
 - **Logo**: Change the logo in the sidebar by updating the `logo` class in the HTML file.
