@@ -24,15 +24,11 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
 ### File Structure
 ```
 /Camera Gallery
-
    index.html
-   
    style.css
    
 /image
-
-   gallery_icon(2).png
-   
+   gallery_icon.png
    photo.jpg
 ```
 ## Customization
