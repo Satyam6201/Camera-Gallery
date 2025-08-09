@@ -38,6 +38,7 @@ A stunning and responsive Camera Gallery website with a sidebar menu for easy na
 
 - **Logo**: Change the logo in the sidebar by updating the `logo` class in the HTML file.
 - **Gallery Photos**: Add your own photos by replacing images in the `/image` directory.
+---
 
 ## Author
 
